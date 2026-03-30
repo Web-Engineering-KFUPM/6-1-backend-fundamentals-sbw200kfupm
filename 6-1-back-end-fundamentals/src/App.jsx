@@ -359,7 +359,7 @@ export default function App() {
   // TODO 9:
   // Create state to store student data
   // Syntax hint:
-  // const [student, setStudent] = useState(____);
+  const [student, setStudent] = useState();
 
   // TODO 8:
   // Request student data from the server when the page loads
@@ -389,11 +389,13 @@ export default function App() {
               {student.name?.charAt(0)}
             </div>
 
-            <div>
+            {Student && (
+               <div>
               <h3>{student.name}</h3>
               <p>{student.major}</p>
-            </div>
+            </div>)}
           </div>
+
         ) : (
           <p className="loading-text">Loading student data...</p>
         )}
@@ -401,3 +403,4 @@ export default function App() {
     </main>
   );
 }
+
