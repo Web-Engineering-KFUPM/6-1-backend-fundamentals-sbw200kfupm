@@ -10,10 +10,6 @@ const PORT = 3000;
 import cors from 'cors';
 app.use(cors());
 
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
-});
-
 // TODO 5: Create the home route "/"
 app.get('/', (req, res) => {
   res.send('Hello, Express with ES6 import!');
@@ -28,10 +24,13 @@ app.get('/about', (req, res) => {
 
 // TODO 7: Create the "/student" route
 app.get('/student', (req, res) => {
-  res.send({
+  res.json({
        name: 'Aisha',
        major: 'Computer Science',
      });
 });
 
 // TODO 4: Start the server on port 3000
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});
