@@ -10,6 +10,9 @@ const PORT = 3000;
 import cors from 'cors';
 app.use(cors());
 
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});
 
 // TODO 5: Create the home route "/"
 
