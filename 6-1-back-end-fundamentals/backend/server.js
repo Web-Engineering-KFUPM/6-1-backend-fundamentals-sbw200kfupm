@@ -15,15 +15,23 @@ app.listen(PORT, () => {
 });
 
 // TODO 5: Create the home route "/"
-
+app.get('/', (req, res) => {
+  res.send('Hello, Express with ES6 import!');
+});
 
 
 // TODO 6: Create the "/about" route
-
+app.get('/about', (req, res) => {
+  res.send('Hello, Express with ES6 import!');
+});
 
 
 // TODO 7: Create the "/student" route
-
-
+app.get('/student', (req, res) => {
+  res.send({
+       name: '_____',
+       major: '________________'
+     });
+});
 
 // TODO 4: Start the server on port 3000
