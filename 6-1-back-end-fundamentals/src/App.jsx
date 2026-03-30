@@ -364,11 +364,14 @@ export default function App() {
   // TODO 8:
   // Request student data from the server when the page loads
   // Syntax hint:
+   useEffect(() => {
   fetch('http://localhost:3000/student')
     .then((res) => res.json())
     .then((data) => {
       setStudent(data);
-    });
+    })
+   }, [])
+    ;
 
   return (
     <main className="app-shell">
@@ -389,7 +392,7 @@ export default function App() {
               {student.name?.charAt(0)}
             </div>
 
-            {Student && (
+            {student && (
                <div>
               <h3>{student.name}</h3>
               <p>{student.major}</p>
